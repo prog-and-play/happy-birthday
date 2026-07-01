@@ -383,30 +383,49 @@ body {
 }
 
 .marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    background: var(--color-ink-black);
+    padding: 60px 0;
+    border-top: 1px solid var(--color-carbon);
+    border-bottom: 1px solid var(--color-carbon);
     display: flex;
-    white-space: nowrap;
 }
 
 .marquee-content {
     display: flex;
-    animation: marquee 20s linear infinite;
+    /* Ширина будет ровно равна двум блокам текста */
+    width: max-content;
+    flex-wrap: nowrap;
+    /* Анимация двигает ленту на половину её длины */
+    animation: marquee-move 20s linear infinite;
+    will-change: transform;
 }
 
-.marquee-content span {
-    font-size: 94px; /* display-text scale */
+.marquee-text {
+    font-size: 94px;
     font-weight: 300;
     color: var(--color-paper-white);
-    padding-right: 50px;
     text-transform: uppercase;
+    white-space: nowrap;
+    /* Добавляем небольшой отступ справа, чтобы фразы не слипались */
+    padding-right: 20px;
 }
 
-@keyframes marquee {
+@keyframes marquee-move {
     0% {
         transform: translateX(0);
     }
     100% {
+        /* Смещаем ровно на половину (на первый блок текста) */
+        /* В этот момент второй блок встает на место первого идеально */
         transform: translateX(-50%);
     }
+}
+
+/* Остановка при наведении (опционально) */
+.marquee-wrapper:hover .marquee-content {
+    animation-play-state: paused;
 }
 
 /* Карточки статистики */
@@ -467,29 +486,30 @@ body {
     overflow: hidden;
 }
 
-.ticker-wrap {
-    display: flex;
-    white-space: nowrap;
-    padding-bottom: 20px;
+.ticker-wrapper {
+    width: 100%;
+    overflow: hidden;
+    padding: 30px 0;
+    border-top: 1px solid #eee;
 }
 
-.ticker-item {
+.ticker-content {
+    display: flex;
+    width: max-content;
+    animation: marquee-move 20s linear infinite; /* Используем ту же анимацию, но медленнее */
+}
+
+.ticker-text {
     font-size: 18px;
-    font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.3em;
     color: var(--color-graphite);
-    animation: ticker 30s linear infinite;
-    padding-right: 50px;
+    white-space: nowrap;
+    padding-right: 40px;
 }
 
-@keyframes ticker {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
+.ticker-wrapper:hover .ticker-content {
+    animation-play-state: paused;
 }
 
 /* Центрирование текста в Manifesto */

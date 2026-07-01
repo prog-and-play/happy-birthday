@@ -117,14 +117,10 @@
 <section id="wishes" class="wishes-ticker editorial-section">
     <div class="container">
         <span class="micro-label" style="padding-left: 40px; padding-bottom: 30px">03 - WISHES FOR YOU</span>
-        <div class="ticker-wrap">
-            <div class="ticker-item">Будь сильной. Будь классной. Будь собой • В 21 всё действительно только начинается
-                •
-                Оставайся такой же креативной • Будь довольна собой, всё обязательно получится •
-            </div>
-            <div class="ticker-item">Будь сильной. Будь классной. Будь собой • В 21 всё действительно только начинается
-                •
-                Оставайся такой же креативной • Будь довольна собой, всё обязательно получится •
+        <div class="ticker-wrapper">
+            <div class="ticker-content">
+                <div class="ticker-text">Будь сильной. Будь классной. Будь собой • В 21 всё действительно только начинается • Оставайся такой же креативной • Будь довольна собой, всё обязательно получится •&nbsp;</div>
+                <div class="ticker-text">Будь сильной. Будь классной. Будь собой • В 21 всё действительно только начинается • Оставайся такой же креативной • Будь довольна собой, всё обязательно получится •&nbsp;</div>
             </div>
         </div>
     </div>
@@ -169,10 +165,19 @@
 
 <!-- НОВЫЙ БЛОК: КИНЕТИЧЕСКАЯ СТРОКА (MARQUEE) -->
 <section class="marquee-section">
+    <!-- Оболочка, которая обрезает всё лишнее -->
     <div class="marquee-wrapper">
         <div class="marquee-content">
-            <span>NASTYA - 21ST CHAPTER - THE MOST BEAUTIFUL GIRL IN MY LIFE - TWENTY ONE YEARS OF GRACE - BORN TO RADIATE - </span>
-            <span>NASTYA - 21ST CHAPTER - THE MOST BEAUTIFUL GIRL IN MY LIFE - TWENTY ONE YEARS OF GRACE - BORN TO RADIATE - </span>
+            <!-- Мы кладем текст в один блок и просто дублируем его -->
+            <div class="marquee-text">
+                <span>NASTYA - 21ST CHAPTER - THE MOST BEAUTIFUL GIRL IN MY LIFE - TWENTY ONE YEARS OF
+                GRACE - BORN TO RADIATE -&nbsp;</span>
+            </div>
+            <!-- Этот же блок дублируем второй раз. Теперь их два рядом. -->
+            <div class="marquee-text" aria-hidden="true">
+                <span>NASTYA - 21ST CHAPTER - THE MOST BEAUTIFUL GIRL IN MY LIFE - TWENTY ONE YEARS OF
+                GRACE - BORN TO RADIATE -&nbsp;</span>
+            </div>
         </div>
     </div>
 </section>
@@ -225,7 +230,8 @@
         <span class="micro-label">06 - MANIFESTO</span>
         <h2 class="display-text">RESTLESS <br> SPIRIT.</h2>
         <p class="body-text" style="max-width: 600px; margin: 40px auto;">Ты изменила мою жизнь и сделала самым
-            счастливым. С днём рождения, моя Настя. Пусть твой мир всегда будет наполнен светом и любовью.<br>Ну а я всегда
+            счастливым. С днём рождения, моя Настя. Пусть твой мир всегда будет наполнен светом и любовью.<br>Ну а я
+            всегда
             буду рядом, буду радовать тебя по поводу и без, очень постараюсь сделать тебя самой счастливой.</p>
         <button class="pill-button" onclick="sendLove()">SEND LOVE</button>
     </div>
